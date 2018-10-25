@@ -1,4 +1,4 @@
-package ovw
+package structs
 
 import (
 	"github.com/fatih/structs"
