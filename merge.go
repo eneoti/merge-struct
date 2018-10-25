@@ -1,4 +1,4 @@
-package structs
+package merp
 
 import (
 	"github.com/fatih/structs"
