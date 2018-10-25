@@ -21,7 +21,7 @@ go get -u github.com/eneoti/merge-struct
 
 Pull requests for new features, bug fixes, and suggestions are welcome!
 
-### How to run gom
+### How to run 
 
 This project is using [dep](https://github.com/golang/dep) for dependency management.
 
