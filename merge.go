@@ -2,7 +2,7 @@ package merp
 
 import (
 	"encoding/json"
-	"fmt"
+	// "fmt"
 	"github.com/fatih/structs"
 	"github.com/mitchellh/mapstructure"
 	"github.com/pkg/errors"
@@ -76,9 +76,9 @@ func mapBase(key string, value interface{}, org *(map[string]interface{})) {
 		}
 	case reflect.Ptr:
 		if !valueRf.IsNil() {
-			temp := valueRf.Elem()
+			// temp := valueRf.Elem()
 			// fmt.Println(reflect.TypeOf(value))
-			fmt.Println(temp)
+			// fmt.Printf("item:%v\n", temp)
 			// temp = temp.(map[string]interface{})
 			// for k, v := range temp {
 			// 	mapBase(k, v, &temp)
