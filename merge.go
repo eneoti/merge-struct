@@ -34,7 +34,6 @@ func MergeOverwrite(to, from, dst interface{}) error {
 	if ok {
 		delete(toMap, "Base")
 	}
-
 	conv := ConventionalMarshaller{Value: toMap}
 	b, err := conv.MarshalJSON()
 	if err != nil {
@@ -67,6 +66,10 @@ func mapBase(key string, value interface{}, org *(map[string]interface{})) {
 			mapBase(k, v, &temp)
 		}
 	case reflect.Slice:
+		if reflect.TypeOf(value).String() == "[]string" {
+			result[key] = value
+			return
+		}
 		temp := value.([]interface{})
 		for _, v := range temp {
 			temp2 := v.(map[string]interface{})
