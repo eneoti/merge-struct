@@ -109,6 +109,11 @@ func mapBase(key string, value interface{}, org *(map[string]interface{})) {
 		}
 		temp := value.([]interface{})
 		for _, v := range temp {
+			if reflect.TypeOf(v).String() == "string" {
+				// fmt.Println(temp)
+				result[key] = value
+				return
+			}
 			temp2 := v.(map[string]interface{})
 			for k1, v1 := range temp2 {
 				mapBase(k1, v1, &temp2)
