@@ -3,44 +3,31 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:f1429aacaac6a261b7028e89fbf1d4b45ac6067be05ef22cc1d249c125126dd2"
   name = "github.com/AdrianLungu/decimal"
   packages = ["."]
-  pruneopts = "UT"
   revision = "9d980d3d4d0342c1f0d300a4c6f2d5659f305dd5"
 
 [[projects]]
-  digest = "1:af43bdaaf86655a2343f113e9b293bbc16b12099eaeb223982bbe4d4c22ba14d"
   name = "github.com/fatih/structs"
   packages = ["."]
-  pruneopts = "UT"
   revision = "4966fc68f5b7593aafa6cbbba2d65ec6e1416047"
   version = "v1.1.0"
 
 [[projects]]
-  digest = "1:53bc4cd4914cd7cd52139990d5170d6dc99067ae31c56530621b18b35fc30318"
   name = "github.com/mitchellh/mapstructure"
   packages = ["."]
-  pruneopts = "UT"
   revision = "3536a929edddb9a5b34bd6861dc4a9647cb459fe"
   version = "v1.1.2"
 
 [[projects]]
-  digest = "1:40e195917a951a8bf867cd05de2a46aaf1806c50cf92eebf4c16f78cd196f747"
   name = "github.com/pkg/errors"
   packages = ["."]
-  pruneopts = "UT"
   revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
   version = "v0.8.0"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = [
-    "github.com/AdrianLungu/decimal",
-    "github.com/fatih/structs",
-    "github.com/mitchellh/mapstructure",
-    "github.com/pkg/errors",
-  ]
+  inputs-digest = "a0e9ca9fceea3a82edb791cd58cb4c951b3be37bdbfa1588a344be7e8bec0e52"
   solver-name = "gps-cdcl"
   solver-version = 1

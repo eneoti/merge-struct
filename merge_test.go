@@ -2,10 +2,10 @@ package merp
 
 import (
 	// "reflect"
+	"github.com/AdrianLungu/decimal"
+	"github.com/eneoti/merge-struct"
 	"testing"
 	"time"
-
-	"github.com/AdrianLungu/decimal"
 )
 
 type testStruct struct {
@@ -44,7 +44,7 @@ func TestMergeOverwrite(t *testing.T) {
 		String: "another string",
 	}
 	var target testStruct
-	if err := MergeOverwrite(to, from, &target); err != nil {
+	if err := merp.MergeOverwrite(to, from, &target); err != nil {
 		t.Fatal(err)
 	}
 	// t.Logf("target: %+v", to)
