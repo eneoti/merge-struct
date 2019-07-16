@@ -84,6 +84,32 @@ func MergeOverwriteCamel(to, from, dst interface{}) error {
 	}
 	return nil
 }
+func MergeToMap(to, from interface{}) (map[string]interface{}, error) {
+	var toMap map[string]interface{}
+	// var result map[string]interface{}
+	var fromMap map[string]interface{}
+	kindTo := reflect.ValueOf(to)
+	kindFrom := reflect.ValueOf(from)
+	if kindTo.Kind() == reflect.Map {
+		toMap = to.(map[string]interface{})
+	} else {
+		toMap = structs.Map(to)
+	}
+	if kindFrom.Kind() == reflect.Map {
+		fromMap = from.(map[string]interface{})
+	} else {
+		fromMap = structs.Map(from)
+	}
+	for k, v := range fromMap {
+		mapBase(k, v, &fromMap)
+		toMap[k] = fromMap[k]
+	}
+	_, ok := toMap["Base"]
+	if ok {
+		delete(toMap, "Base")
+	}
+	return toMap, nil
+}
 func mapBase(key string, value interface{}, org *(map[string]interface{})) {
 	result := *org
 	if key == "Base" {
